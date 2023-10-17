@@ -117,6 +117,8 @@ const (
 	DefaultLogsType = "json"
 	DefaultChain    = MainChain
 
+	DefaultWithAppStatFlag = true
+
 	DefaultTendermintNode = "tcp://localhost:26657"
 
 	DefaultMainnetSeeds = "1500161dd491b67fb1ac81868952be49e2509c9f@52.78.36.216:26656,dd4a3f1750af5765266231b9d8ac764599921736@3.36.224.80:26656,8ea4f592ad6cc38d7532aff418d1fb97052463af@34.240.245.39:26656,e772e1fb8c3492a9570a377a5eafdb1dc53cd778@54.194.245.5:26656"
@@ -199,6 +201,8 @@ type Configuration struct {
 
 	// current chain - newSelectionAlgoHeight depends on this
 	Chain string `mapstructure:"chain"`
+
+	WithAppStatFlag bool `mapstructure:"with_app_stat"`
 }
 
 var conf Configuration
@@ -440,9 +444,10 @@ func GetDefaultHeimdallConfig() Configuration {
 
 		NoACKWaitTime: NoACKWaitTime,
 
-		LogsType:       DefaultLogsType,
-		Chain:          DefaultChain,
-		LogsWriterFile: "", // default to stdout
+		LogsType:        DefaultLogsType,
+		Chain:           DefaultChain,
+		LogsWriterFile:  "", // default to stdout
+		WithAppStatFlag: DefaultWithAppStatFlag,
 	}
 }
 
