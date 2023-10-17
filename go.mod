@@ -151,7 +151,7 @@ require (
 	gopkg.in/yaml.v3 v3.0.1
 )
 
-replace github.com/tendermint/tendermint => ../tendermint
+replace github.com/tendermint/tendermint =>  github.com/biajee/tendermint v0.0.0-20231017210508-230419399711
 
 replace github.com/tendermint/tm-db => github.com/tendermint/tm-db v0.2.0
 
